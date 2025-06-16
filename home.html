@@ -956,21 +956,7 @@
             z-index: 1000;
             pointer-events: none;
         }
-        
-        /* كرة كيوت */
-        .cat-ball {
-            position: fixed;
-            width: 80px;
-            height: 80px;
-            background-image: url('https://i.imgur.com/qS9q4Jt.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 999;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            animation: bounceAround 15s infinite alternate;
-        }
-        
+    
         @keyframes bounceAround {
             0% { transform: translate(0, 0); }
             20% { transform: translate(200px, 100px); }
@@ -1172,17 +1158,7 @@ setTimeout(() => {
         alert("كل سنه ونتي طيبه يا روحي أن شاء الله تعجبك الهديه❤❤💖");
     </script>
     
-    <div class="hearts-container"></div>
-    
-    <!-- كرة كيوت -->
-    <div class="cat-ball" id="catBall"></div>
-    
-    <div class="language-selector">
-        <button class="lang-btn" data-lang="ar">العربية</button>
-        <button class="lang-btn" data-lang="en">English</button>
-        <button class="lang-btn" data-lang="ko">한국어</button>
-        <button class="lang-btn" data-lang="ja">日本語</button>
-    </div>
+
 
     <!-- شاشة البداية -->
     <section class="welcome-screen" id="welcome">
@@ -1554,32 +1530,7 @@ setTimeout(() => {
             // إنشاء القلوب العائمة
             createHearts();
             
-            // تحريك كرة الكات
-            const catBall = document.getElementById('catBall');
-            let posX = 0, posY = 0;
-            let speedX = 2, speedY = 2;
-            
-            function moveCatBall() {
-                posX += speedX;
-                posY += speedY;
-                
-                // تغيير الاتجاه عند الوصول إلى الحواف
-                if (posX + 80 > window.innerWidth || posX < 0) {
-                    speedX = -speedX;
-                }
-                
-                if (posY + 80 > window.innerHeight || posY < 0) {
-                    speedY = -speedY;
-                }
-                
-                catBall.style.left = posX + 'px';
-                catBall.style.top = posY + 'px';
-                
-                requestAnimationFrame(moveCatBall);
-            }
-            
-            // بدء تحريك الكرة
-            moveCatBall();
+           
             
             // تغيير اللغة
             const langButtons = document.querySelectorAll('.lang-btn');
